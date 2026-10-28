@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Beranda Catatan{% endblock %}
+
+{% block content %}
+<h1 class="page-title">Daftar Artikel Catatan</h1>
+
+<div class="card-grid">
+    {% for item in artikel_list %}
+    <div class="card">
+        <span class="badge">Artikel #{{ item.id }}</span>
+        <h3>{{ item.judul }}</h3>
+        <p>{{ item.ringkasan }}</p>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
