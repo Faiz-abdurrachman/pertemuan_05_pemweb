@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}Beranda Catatan{% endblock %}
+{% block title %}Daftar Menu Kantin{% endblock %}
 
 {% block content %}
-<h1 class="page-title">Daftar Artikel Catatan</h1>
+<h1 class="page-title">Daftar Menu Kantin Kampus</h1>
 
 <div class="card-grid">
-    {% for item in artikel_list %}
+    {% for item in menu_list %}
     <div class="card">
-        <span class="badge">Artikel #{{ item.id }}</span>
-        <h3>{{ item.judul }}</h3>
-        <p>{{ item.ringkasan }}</p>
+        <span class="badge">{{ item.kategori }} &bull; {{ item.harga }}</span>
+        <h3>{{ item.nama }}</h3>
+        <p>{{ item.deskripsi }}</p>
+        <a href="#" class="btn">Lihat Detail Menu &rarr;</a>
     </div>
     {% endfor %}
 </div>
